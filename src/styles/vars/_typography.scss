@@ -1,0 +1,156 @@
+@function pow($number, $exponent, $base) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value * $base;
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+$typography-size: (
+  header: 58px,
+  display: 43px,
+  title: 32px,
+  subtitle: 28px,
+  headline: 24px,
+  subheading: 18px,
+  paragraph: 18px,
+  button: 16px,
+  overline: 14px,
+  caption: 14px,
+  code: 14px
+);
+
+$font-stack: (
+  header: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderBold),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, header),
+    margin: 0 0 0.5em,
+    letter-spacing: map-get($letter-spacing, header),
+    text-transform: none
+  ),
+  display: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderBold),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, display),
+    margin: map-get($base-font, marginHeader),
+    letter-spacing: map-get($letter-spacing, display),
+    text-transform: none
+  ),
+  title: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderBold),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, title),
+    margin: map-get($base-font, marginHeader),
+    letter-spacing: map-get($letter-spacing, title),
+    text-transform: none
+  ),
+  subtitle: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderNormal),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, subtitle),
+    margin: map-get($base-font, marginHeader),
+    letter-spacing: map-get($letter-spacing, subtitle),
+    text-transform: none
+  ),
+  headline: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderBold),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, headline),
+    margin: map-get($base-font, marginHeader),
+    letter-spacing: map-get($letter-spacing, headline),
+    text-transform: none
+  ),
+  subheading: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderBold),
+    line-height: map-get($base-font, lineheightHeader),
+    font-size: map-get($typography-size, subheading),
+    margin: map-get($base-font, marginHeader),
+    letter-spacing: map-get($letter-spacing, subheading),
+    text-transform: none
+  ),
+  paragraph: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightParagraphNormal),
+    line-height: map-get($base-font, lineheightParagraph),
+    font-size: map-get($typography-size, paragraph),
+    margin: map-get($base-font, marginParagraph),
+    letter-spacing: map-get($letter-spacing, paragraph),
+    text-transform: none
+  ),
+  button: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightHeaderNormal),
+    line-height: map-get($base-font, lineheightParagraph),
+    font-size: map-get($typography-size, button),
+    margin: inherit,
+    letter-spacing: map-get($letter-spacing, button),
+    text-transform: uppercase
+  ),
+  overline: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightParagraphNormal),
+    line-height: map-get($base-font, lineheightParagraph),
+    font-size: map-get($typography-size, overline),
+    margin: map-get($base-font, marginParagraph),
+    letter-spacing: map-get($letter-spacing, overline),
+    text-transform: uppercase
+  ),
+  caption: (
+    font-family: map-get($base-font, family),
+    font-weight: map-get($base-font, weightParagraphLight),
+    line-height: map-get($base-font, lineheightParagraph),
+    font-size: map-get($typography-size, caption),
+    margin: map-get($base-font, marginParagraph),
+    letter-spacing: map-get($letter-spacing, caption),
+    text-transform: none
+  ),
+  code: (
+    font-family: map-get($base-font, family-code),
+    font-weight: map-get($base-font, weightHeaderNormal),
+    line-height: map-get($base-font, lineheightParagraph),
+    font-size: map-get($typography-size, code),
+    margin: map-get($base-font, marginParagraph),
+    letter-spacing: map-get($letter-spacing, code),
+    text-transform: none
+  )
+);
+
+@mixin font(
+  $style,
+  $color: dark-primary,
+  $properties: font-family font-weight line-height font-size margin
+    letter-spacing text-transform
+) {
+  $font-properties: map-get($font-stack, $style);
+  @if $font-properties {
+    @each $property, $values in $font-properties {
+      @if contains($properties, $property) {
+        #{$property}: map-get($font-properties, $property);
+      }
+    }
+  }
+
+  // color: map-get($typography-color, $color);
+}

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:500|Lato:300,300i,400,400i,700,700i,900");
+
+/** Spacing */
+$main__max-width: 906px;
+
+/** Colors */
+$theme-colors: (
+  orange: (
+    primary: #f60,
+    900: #c43300,
+    800: #dd4d0a,
+    700: #ea580f,
+    600: #f06000,
+    500: #ff6600,
+    400: #ff753e,
+    300: #ff8a61,
+    200: #ffab8f,
+    100: #ffccbb,
+    50: #fce9e7
+  ),
+  gray: (
+    primary: #7e7e83,
+    900: #1e1e1e,
+    800: #3e3e42,
+    700: #5d5d61,
+    600: #7e7e83,
+    500: #a8a8ad,
+    400: #c6c6cb,
+    300: #e8e8ed,
+    200: #f1f1f1,
+    100: #f6f6f6,
+    50: #fbfbfb
+  ),
+  blue: (
+    primary: #0163a9,
+    900: #003a79,
+    800: #0163a9,
+    700: #1766aa,
+    600: #2177bb,
+    500: #2984c7,
+    400: #4594cf,
+    300: #65b1e2,
+    200: #8cbfe2,
+    100: #b8d7ed,
+    50: #e2eff7
+  ),
+  teal: (
+    primary: #038a9c,
+    900: #006a78,
+    800: #008596,
+    700: #2391b4,
+    600: #23a6b8,
+    500: #2ab5c7,
+    400: #44becf,
+    300: #66d4e3,
+    200: #8dd9e3,
+    100: #b9e7ed,
+    50: #dff2f5
+  ),
+  red: (
+    primary: #f2293d,
+    900: #b60022,
+    800: #c4002e,
+    700: #d10f35,
+    600: #e31d3c,
+    500: #f2293d,
+    400: #ed4456,
+    300: #e26a76,
+    200: #ec949c,
+    100: #fdcad3,
+    50: #feeaef
+  ),
+  green: (
+    primary: #009989,
+    900: #005040,
+    800: #006c5d,
+    700: #007c6c,
+    600: #008c7c,
+    500: #009989,
+    400: #01a99b,
+    300: #43b9ad,
+    200: #7ccdc5,
+    100: #b0e0db,
+    50: #dff3f1
+  ),
+  purple: (
+    primary: #481d93,
+    900: #090070,
+    800: #260b7e,
+    700: #331186,
+    600: #40198e,
+    500: #481d93,
+    400: #643ea2,
+    300: #643ea2,
+    200: #7e5fb1,
+    100: #c7badd,
+    50: #e9e3f1
+  )
+);
+
+/** Box Model  */
+$spacer: 2rem;
+
+/** Typography **/
+$typography-color: (
+  dark-primary: #3e3e42,
+  dark-secondary: #7e7e83,
+  dark-disabled: #a8a8ad,
+  light-primary: #ffffff,
+  light-secondary: #c6c6cb,
+  light-disabled: #7e7e83
+);
+
+$base-font: (
+  size: 18px,
+  button-size: 16px,
+  small-size: 14px,
+  family: (
+    "Lato",
+    sans-serif
+  ),
+  family-code: (
+    "Fira Mono",
+    "Courier New",
+    "Monaco"
+  ),
+  spacingMultiplier: 1.414,
+  lineheightHeader: 1.2,
+  lineheightParagraph: 1.45,
+  weightHeaderBold: 800,
+  weightHeaderNormal: 500,
+  weightParagraphBold: 600,
+  weightParagraphNormal: 400,
+  weightParagraphLight: 400,
+  marginHeader: 1.414em 0 0.5em,
+  marginParagraph: 1.414em 0 0.5em
+);
+
+$letter-spacing: (
+  header: -0.035em,
+  display: -0.015em,
+  title: -0.01em,
+  subtitle: -0.01em,
+  headline: -0.005em,
+  subheading: inherit,
+  paragraph: inherit,
+  button: 0.025em,
+  overline: 0.015em,
+  caption: 0,
+  code: inherit
+);
