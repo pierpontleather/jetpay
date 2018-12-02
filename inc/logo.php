@@ -348,16 +348,7 @@ function footerCubes($args = null)
   }
   if ($args['color'] == 'mono') {
     ?>
-     <svg width="<?php echo $size ?>" height="<?php echo $size * (116 / 118) ?>" viewBox="0 0 118 116" fill="none">
-      <rect y={87} width={29} height={29} fill="#3E3E42" />
-      <rect y={57} width={29} height={30} fill="#A8A8AD" />
-      <rect width={29} height={29} fill="#E8E8ED" />
-      <rect x={29} y={87} width={30} height={29} fill="#E8E8ED" />
-      <rect x={59} y={57} width={29} height={30} fill="#7E7E83" />
-      <rect x={88} y={87} width={30} height={29} fill="#F1F1F1" />
-      <rect x={29} y={57} width={30} height={30} fill="#5D5D61" />
-      <rect x={29} y={28} width={30} height={29} fill="#C6C6CB" />
-    </svg>
+     <svg width="<?php echo $size ?>" height="<?php echo $size * (116 / 118) ?>" viewBox="0 0 118 116" fill="none"><rect y={87} width={29} height={29} fill="#3E3E42" /><rect y={57} width={29} height={30} fill="#A8A8AD" /><rect width={29} height={29} fill="#E8E8ED" /><rect x={29} y={87} width={30} height={29} fill="#E8E8ED" /><rect x={59} y={57} width={29} height={30} fill="#7E7E83" /><rect x={88} y={87} width={30} height={29} fill="#F1F1F1" /><rect x={29} y={57} width={30} height={30} fill="#5D5D61" /><rect x={29} y={28} width={30} height={29} fill="#C6C6CB" /></svg>
     <?php
 
   }

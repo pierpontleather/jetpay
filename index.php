@@ -7,4 +7,4 @@
 <?php //singleCube(); ?>
 <?php //multiCube(); ?>
 
-<?php get_footer(); ?>
+<?php jpFooter(); ?>

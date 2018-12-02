@@ -505,4 +505,24 @@
   &--purple900 {
     @include color(purple, 900, color);
   }
+
+  // Text Colors
+  &--dark-primary {
+    color: map-get($typography-color, dark-primary);
+  }
+  &--dark-secondary {
+    color: map-get($typography-color, dark-secondary);
+  }
+  &--dark-disabled {
+    color: map-get($typography-color, dark-disabled);
+  }
+  &--light-primary {
+    color: map-get($typography-color, light-primary);
+  }
+  &--light-secondary {
+    color: map-get($typography-color, light-secondary);
+  }
+  &--light-disabled {
+    color: map-get($typography-color, light-disabled);
+  }
 }

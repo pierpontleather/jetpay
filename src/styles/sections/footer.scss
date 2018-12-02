@@ -1,13 +1,30 @@
 footer {
   margin-bottom: -10px;
 
+  .footer-top {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      white,
+      #f1f1f1,
+      #f1f1f1,
+      #f1f1f1,
+      white
+    );
+  }
+
   .footer {
+    padding-top: 48px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: 1fr 200px;
     width: 100%;
     clear: both;
     overflow: hidden;
+
+    a {
+      color: map-get($typography-color, dark-disabled);
+    }
   }
 }
 
@@ -22,16 +39,15 @@ footer {
   grid-column: 1 /2;
 }
 
-@media (min-width: 750px) {
-  .footer-cubes {
-    margin-bottom: -10px;
-  }
-}
-
-
 .footer-column {
-  margin: 4vw;
+  margin: 0 4vw;
   width: 200px;
+  text-align: center;
+
+  .footer-column-inner {
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 .footer-menu {
@@ -40,6 +56,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: -40px;
 }
 h5 {
   width: 100%;
@@ -50,12 +67,85 @@ h5 {
   margin-top: 0.5em;
 }
 
+.footer-bottom--section {
+  grid-column: -1 / 1;
+  grid-row: -1 / -2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-.footer-image__color {
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect y="85" width="29" height="29" fill="#0163A9"/> <rect y="56" width="29" height="29" fill="#FF6600"/> <rect width="29" height="29" fill="#E8E8ED"/> <rect x="29" y="85" width="29" height="29" fill="#E8E8ED"/> <rect x="58" y="56" width="29" height="29" fill="#FF6600"/> <rect x="87" y="85" width="28" height="29" fill="#038A9C"/> <rect x="29" y="56" width="29" height="29" fill="#0163A9"/> <rect x="29" y="27" width="29" height="29" fill="#038A9C"/> </svg>');
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-width: 30vw;
-  margin-bottom: -2px;
+.footer-image {
+  &--color {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect y="85" width="29" height="29" fill="#0163A9"/> <rect y="56" width="29" height="29" fill="#FF6600"/> <rect width="29" height="29" fill="#E8E8ED"/> <rect x="29" y="85" width="29" height="29" fill="#E8E8ED"/> <rect x="58" y="56" width="29" height="29" fill="#FF6600"/> <rect x="87" y="85" width="28" height="29" fill="#038A9C"/> <rect x="29" y="56" width="29" height="29" fill="#0163A9"/> <rect x="29" y="27" width="29" height="29" fill="#038A9C"/> </svg>');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 30vw;
+    margin-bottom: -2px;
+  }
+
+  &--orange {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="84" width="28" height="28" fill="#C43300"/><rect y="55" width="28" height="29" fill="#FFAB8F"/><rect width="28" height="28" fill="#E8E8ED"/><rect x="28" y="84" width="28" height="28" fill="#E8E8ED"/><rect x="56" y="55" width="29" height="29" fill="#DD420A"/><rect x="85" y="84" width="28" height="28" fill="#FF703E"/><rect x="28" y="55" width="28" height="29" fill="#F85115"/><rect x="28" y="27" width="28" height="28" fill="#FF8A61"/></svg>');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 30vw;
+    margin-bottom: -2px;
+  }
+
+  &--blue {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 113 111" fill="none"><rect y="83" width="28" height="28" fill="#003A79" /><rect y="55" width="28" height="28" fill="#8CBFE2" /><rect width="28" height="28" fill="#E8E8ED" /><rect x="28" y="83" width="28" height="28" fill="#E8E8ED" /><rect x="56" y="55" width="29" height="28" fill="#0163A9" /><rect x="85" y="83" width="28" height="28" fill="#4594CF" /><rect x="28" y="55" width="28" height="28" fill="#2177BB" /><rect x="28" y="26" width="28" height="29" fill="#65B1E2" /></svg>');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 30vw;
+    margin-bottom: -2px;
+  }
+
+  &--teal {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 109 108" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="81" width="27" height="27" fill="#005C6E"/><rect y="54" width="27" height="27" fill="#E2F5FE"/><rect width="27" height="27" fill="#E8E8ED"/><rect x="27" y="81" width="27" height="27" fill="#E8E8ED"/><rect x="54" y="54" width="28" height="27" fill="#2391B4"/><rect x="82" y="81" width="27" height="27" fill="#40BFEB"/><rect x="27" y="54" width="27" height="27" fill="#37B4E3"/><rect x="27" y="26" width="27" height="28" fill="#88D9F9"/></svg>');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 30vw;
+    margin-bottom: -2px;
+  }
+
+  &--mono {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 118 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="87" width="29" height="29" fill="#3E3E42"/><rect y="57" width="29" height="30" fill="#A8A8AD"/><rect width="29" height="29" fill="#E8E8ED"/><rect x="29" y="87" width="30" height="29" fill="#E8E8ED"/><rect x="59" y="57" width="29" height="30" fill="#7E7E83"/><rect x="88" y="87" width="30" height="29" fill="#F1F1F1"/><rect x="29" y="57" width="30" height="30" fill="#5D5D61"/><rect x="29" y="28" width="30" height="29" fill="#C6C6CB"/></svg>
+    ');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 30vw;
+    margin-bottom: -2px;
+  }
+}
+
+@media (min-width: 750px) {
+  .footer-cubes {
+    margin-bottom: -10px;
+  }
+}
+
+@media (max-width: 749px) {
+  .footer-bottom--section {
+    align-items: flex-end;
+    margin-right: 16px;
+    margin-bottom: 8px;
+  }
+  .footer-column {
+    text-align: center;
+    margin-bottom: 16px;
+
+    .footer-column-inner {
+      text-align: center;
+    }
+  }
+
+  footer .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

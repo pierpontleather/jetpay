@@ -13,4 +13,4 @@ while (have_posts()) {
 
 }
 
-get_footer();
+jpFooter('mono');

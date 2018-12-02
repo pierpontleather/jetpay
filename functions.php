@@ -1,6 +1,8 @@
 <?php
 
 require get_theme_file_path('inc/logo.php');
+// footer() function
+require get_theme_file_path('inc/footer.php');
 
 // Clean up wordpres <head>
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
@@ -46,8 +48,8 @@ function arphabet_widgets_init()
         'name' => 'Footer Menu',
         'id' => 'footer-menu',
         'description' => 'This will be displayed as columns in the footer.',
-        'before_widget' => '<div class="footer-column">',
-        'after_widget' => '</div>',
+        'before_widget' => '<div class="footer-column color--dark-secondary"><div class="footer-column-inner">',
+        'after_widget' => '</div></div>',
         'before_title' => '<h5 class="footer-heading">',
         'after_title' => '</h5>',
     ));
