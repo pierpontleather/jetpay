@@ -17,10 +17,20 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 /**
  * Theme assets
  */
+// Font Awesome CSS Pro
+function hook_fa()
+{ ?>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-j8y0ITrvFafF4EkV1mPW0BKm6dp3c+J9Fky22Man50Ofxo2wNe5pT1oZejDH9/Dt" crossorigin="anonymous">
+    <?php
+
+}
+// register scripts and stylesheets
+add_action('wp_head', 'hook_fa');
+
 add_action('wp_enqueue_scripts', function () {
     $manifest = json_decode(file_get_contents('build/assets.json', true));
     $main = $manifest->main;
-    wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css,  false, null);
+    wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css, false, null);
     wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);
 }, 100);
 
@@ -29,15 +39,6 @@ add_action('wp_enqueue_scripts', function () {
  * Theme setup
  */
 add_action('after_setup_theme', function () {
-    /**
-     * Enable features from Soil when plugin is activated
-     * @link https://roots.io/plugins/soil/
-     */
-    add_theme_support('soil-clean-up');
-    add_theme_support('soil-jquery-cdn');
-    add_theme_support('soil-nav-walker');
-    add_theme_support('soil-nice-search');
-    add_theme_support('soil-relative-urls');
     /**
      * Enable plugins to manage the document title
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
@@ -71,25 +72,25 @@ add_action('after_setup_theme', function () {
 
 
 add_action('rest_api_init', function () {
-	$namespace = 'presspack/v1';
-	register_rest_route( $namespace, '/path/(?P<url>.*?)', array(
-		'methods'  => 'GET',
-		'callback' => 'get_post_for_url',
-	));
+    $namespace = 'presspack/v1';
+    register_rest_route($namespace, '/path/(?P<url>.*?)', array(
+        'methods' => 'GET',
+        'callback' => 'get_post_for_url',
+    ));
 });
 
 /**
-* This fixes the wordpress rest-api so we can just lookup pages by their full
-* path (not just their name). This allows us to use React Router.
-*
-* @return WP_Error|WP_REST_Response
-*/
+ * This fixes the wordpress rest-api so we can just lookup pages by their full
+ * path (not just their name). This allows us to use React Router.
+ *
+ * @return WP_Error|WP_REST_Response
+ */
 function get_post_for_url($data)
 {
-    $postId    = url_to_postid($data['url']);
-    $postType  = get_post_type($postId);
+    $postId = url_to_postid($data['url']);
+    $postType = get_post_type($postId);
     $controller = new WP_REST_Posts_Controller($postType);
-    $request    = new WP_REST_Request('GET', "/wp/v2/{$postType}s/{$postId}");
+    $request = new WP_REST_Request('GET', "/wp/v2/{$postType}s/{$postId}");
     $request->set_url_params(array('id' => $postId));
     return $controller->get_item($request);
 }
@@ -97,7 +98,8 @@ function get_post_for_url($data)
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
-function add_slug_to_body_class($classes) {
+function add_slug_to_body_class($classes)
+{
     global $post;
     if (is_home()) {
         $key = array_search('blog', $classes);
