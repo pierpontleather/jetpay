@@ -2,6 +2,11 @@
 
 function Logo($args = null)
 {
+  if ($args['size']) {
+    $size = $args['size'] . 'px';
+  } else {
+    $size = "150px";
+  }
   $colorOptions = array(
     "darkPrimary" => "#3e3e42",
     "darkSecondary" => "#7e7e83",
@@ -45,7 +50,7 @@ function Logo($args = null)
   }
 
   ?>
-  <svg width={287} height={60} viewBox="0 0 287 60" fill="none">
+  <svg width="<?php echo $size; ?>" height="<?php echo ($size * (60 / 287)) . "px" ?>" viewBox="0 0 287 60" fill="none">
       <path
         d="M36.2 35.0499C34.4 42.45 32.3 45.7 27.75 48.15C24.35 50 19.9 50.9 14.45 50.9C9.4 50.9 5.35 50.25 0 48.45L3.05 35.8499C5.95 36.4499 7.05 36.5999 8.95 36.5999C13.4 36.5999 15.45 35.5 16.8 32.45C17.6 30.55 19.15 24.15 24.65 0.699951H44.4L36.2 35.0499Z"
         fill="<?php echo $color['1']; ?>"
