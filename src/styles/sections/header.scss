@@ -1,0 +1,25 @@
+header {
+  height: 64px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 5fr 2fr;
+
+  .header-menu {
+    grid-column-start: 2;
+    grid-column-end: -2;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 64px;
+
+    a {
+      color: map-get($typography-color, dark-primary);
+      @include font(button);
+      font-size: 14px;
+      margin: none;
+
+      .header-menu-primary {
+        padding: 0.7em 20px;
+      }
+    }
+  }
+}

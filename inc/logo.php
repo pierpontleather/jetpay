@@ -21,7 +21,7 @@ function Logo($args = null)
   );
   if (!$args['color']) {
     $color['1'] = "#ff6600";
-    $color['2'] = $colorOptions['darkDisabled'];
+    $color['2'] = $colorOptions['darkPrimary'];
   } else {
     if ($args['color'] == 'darkDisabled') {
       $color['1'] = $colorOptions['darkDisabled'];
@@ -363,7 +363,7 @@ function footerCubes($args = null)
   }
 } else {
   ?>
-  <svg width="<?php echo $size ?>" height="<?php echo $size * (115 / 113) ?>" viewBox="0 0 115 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="<?php echo $size ?>" height="<?php echo $size * (115 / 113) ?>" viewBox="0 0 113 115" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect y="85" width="29" height="29" fill="#0163A9"/>
     <rect y="56" width="29" height="29" fill="#FF6600"/>
     <rect width="29" height="29" fill="#E8E8ED"/>

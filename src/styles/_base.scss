@@ -1,9 +1,16 @@
+// REMOVE THE BORDER AROUND HTML BODY
+
+.unloaded {
+  display: none;
+}
+
 html {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+  color: map-get($typography-color, dark-primary);
   -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow: hidden;
 }
 
 html,
@@ -11,7 +18,6 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  position: relative;
 }
 
 a {
@@ -21,4 +27,12 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.text-thin {
+  font-weight: 400;
+}
+
+.text-thick {
+  font-weight: 800;
 }

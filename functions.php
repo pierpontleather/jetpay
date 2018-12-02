@@ -35,6 +35,25 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);
 }, 100);
 
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function arphabet_widgets_init()
+{
+
+    register_sidebar(array(
+        'name' => 'Footer Menu',
+        'id' => 'footer-menu',
+        'description' => 'This will be displayed as columns in the footer.',
+        'before_widget' => '<div class="footer-column">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5 class="footer-heading">',
+        'after_title' => '</h5>',
+    ));
+
+}
+add_action('widgets_init', 'arphabet_widgets_init');
 
 /**
  * Theme setup

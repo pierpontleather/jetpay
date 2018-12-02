@@ -1,0 +1,61 @@
+footer {
+  margin-bottom: -10px;
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: 1fr 200px;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+.footer-cubes {
+  opacity: 0.87;
+  margin-bottom: -1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-row: -1 / -2;
+  align-items: flex-end;
+  grid-column: 1 /2;
+}
+
+@media (min-width: 750px) {
+  .footer-cubes {
+    margin-bottom: -10px;
+  }
+}
+
+
+.footer-column {
+  margin: 4vw;
+  width: 200px;
+}
+
+.footer-menu {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h5 {
+  width: 100%;
+}
+
+.textwidget p {
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+
+.footer-image__color {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect y="85" width="29" height="29" fill="#0163A9"/> <rect y="56" width="29" height="29" fill="#FF6600"/> <rect width="29" height="29" fill="#E8E8ED"/> <rect x="29" y="85" width="29" height="29" fill="#E8E8ED"/> <rect x="58" y="56" width="29" height="29" fill="#FF6600"/> <rect x="87" y="85" width="28" height="29" fill="#038A9C"/> <rect x="29" y="56" width="29" height="29" fill="#0163A9"/> <rect x="29" y="27" width="29" height="29" fill="#038A9C"/> </svg>');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 30vw;
+  margin-bottom: -2px;
+}

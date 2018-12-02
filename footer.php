@@ -1,16 +1,15 @@
-	<footer class="footer">
-	<div class="footer-cubes">
-		<?php footerCubes(array(
-		'size' => '250'
-	)); ?>
-	</div>
-	<div class="footer-menu">
-		<h5>Footer Title</h5>
-		<h5>Footer Title</h5>
-		<h5>Footer Title</h5>
-		<h5>Footer Title</h5>
-	</div>
+</div>
+	<footer>
+		<div class="footer">
+			<!-- <div class="footer-menu--container"> -->
+				<div class="footer-menu">
+					<?php dynamic_sidebar('footer-menu') ?>
+				</div>
+				<div class="footer-cubes footer-image__color"></div>
+			<!-- </div> -->
+		</div>
 </footer>
+		</div>
 		<?php wp_footer(); ?>
 	</body>
 </html>

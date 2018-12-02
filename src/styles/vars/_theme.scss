@@ -132,8 +132,10 @@ $base-font: (
   weightParagraphBold: 600,
   weightParagraphNormal: 400,
   weightParagraphLight: 400,
-  marginHeader: 1.414em 0 0.5em,
-  marginParagraph: 1.414em 0 0.5em
+  mbsHeader: 8px,
+  mbeHeader: 0em,
+  mbsParagraph: 1.4em,
+  mbeParagraph: 0.05em
 );
 
 $letter-spacing: (
