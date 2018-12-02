@@ -1,5 +1,6 @@
 <?php
 
+require get_theme_file_path('inc/logo.php');
 
 // Clean up wordpres <head>
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
