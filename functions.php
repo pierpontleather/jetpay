@@ -1,8 +1,12 @@
 <?php
 
 require get_theme_file_path('inc/logo.php');
-// footer() function
+// jpFooter() function
 require get_theme_file_path('inc/footer.php');
+// jpHeader() function
+require get_theme_file_path('inc/header.php');
+// customHelperfunctions
+require get_theme_file_path('inc/helpfulFunctions.php');
 
 // Clean up wordpres <head>
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link

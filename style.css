@@ -6,3 +6,107 @@ Author URI: https://jetpay.com/
 Description: The Official JetPay Wordpress Theme
 Version: 0.0.1
 */
+
+/*
+We'll store some common variables in here!
+*/
+:root {
+  /* Text Colors */
+  --darkPrimary: #3e3e42;
+  --darkSecondary: #7e7e83;
+  --darkDisabled: #a8a8ad;
+  --lightPrimary: #ffffff;
+  --lightSecondary: #c6c6cb;
+  --lightDisabled: #7e7e83;
+
+  /* Orange */
+  --orangePrimary: #f60;
+  --orange900: #c43300;
+  --orange800: #dd4d0a;
+  --orange700: #ea580f;
+  --orange600: #f06000;
+  --orange500: #ff6600;
+  --orange400: #ff753e;
+  --orange300: #ff8a61;
+  --orange200: #ffab8f;
+  --orange100: #ffccbb;
+  --orange50: #fce9e7;
+
+  /* Gray */
+  --grayPrimary: #7e7e83;
+  --gray900: #1e1e1e;
+  --gray800: #3e3e42;
+  --gray700: #5d5d61;
+  --gray600: #7e7e83;
+  --gray500: #a8a8ad;
+  --gray400: #c6c6cb;
+  --gray300: #e8e8ed;
+  --gray200: #f1f1f1;
+  --gray100: #f6f6f6;
+  --gray50: #fbfbfb;
+
+  /* Teal */
+  --tealPrimary: #038a9c;
+  --teal900: #006a78;
+  --teal800: #008596;
+  --teal700: #2391b4;
+  --teal600: #23a6b8;
+  --teal500: #2ab5c7;
+  --teal400: #44becf;
+  --teal300: #66d4e3;
+  --teal200: #8dd9e3;
+  --teal100: #b9e7ed;
+  --teal50: #dff2f5;
+
+  /* Blue */
+  --bluePrimary: #0163a9;
+  --blue900: #003a79;
+  --blue800: #0163a9;
+  --blue700: #1766aa;
+  --blue600: #2177bb;
+  --blue500: #2984c7;
+  --blue400: #4594cf;
+  --blue300: #65b1e2;
+  --blue200: #8cbfe2;
+  --blue100: #b8d7ed;
+  --blue50: #e2eff7;
+
+  /* Red */
+  --redPrimary: #f2293d;
+  --red900: #b60022;
+  --red800: #c4002e;
+  --red700: #d10f35;
+  --red600: #e31d3c;
+  --red500: #f2293d;
+  --red400: #ed4456;
+  --red300: #e26a76;
+  --red200: #ec949c;
+  --red100: #fdcad3;
+  --red50: #feeaef;
+
+  /* Green */
+  --greenPrimary: #009989;
+  --green900: #005040;
+  --green800: #006c5d;
+  --green700: #007c6c;
+  --green600: #008c7c;
+  --green500: #009989;
+  --green400: #01a99b;
+  --green300: #43b9ad;
+  --green200: #7ccdc5;
+  --green100: #b0e0db;
+  --green50: #dff3f1;
+
+  /* Purple */
+  --purplePrimary: #481d93;
+  --purple900: #090070;
+  --purple800: #260b7e;
+  --purple700: #331186;
+  --purple600: #40198e;
+  --purple500: #481d93;
+  --purple400: #643ea2;
+  --purple300: #643ea2;
+  --purple200: #7e5fb1;
+  --purple100: #c7badd;
+  --purple50: #e9e3f1;
+}

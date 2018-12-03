@@ -1,4 +1,4 @@
-<?php get_header();
+<?php jpHeader();
 
 while (have_posts()) {
 	the_post(); ?>
@@ -13,4 +13,10 @@ while (have_posts()) {
 
 }
 
-jpFooter('mono');
+/*
+ ** Notice -- custom footer function
+ *	$args of jpFooter() can be color, mono,
+ *	orange, teal, or blue.
+ **
+ */
+jpFooter('color');
