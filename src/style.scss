@@ -1,8 +1,14 @@
+// Globals and Variables
 @import "styles/vars/theme";
 @import "styles/vars/color";
 @import "styles/vars/typography";
 @import "styles/vars/global-vars";
 @import "styles/base";
-@import "styles/layout/layout";
+
+// Sections
 @import "styles/sections/footer";
 @import "styles/sections/header";
+
+// Layouts
+@import "styles/layout/layout";
+@import "styles/layout/blog-archive";

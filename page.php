@@ -1,16 +1,8 @@
 <?php jpHeader();
 
 while (have_posts()) {
-	the_post(); ?>
-	<div class="container">
-
-	<article>
-	<?php the_content(); ?>
-	</article>
-	</div>
-
-<?php
-
+	the_post();
+	the_content();
 }
 
 /*

@@ -2,18 +2,25 @@
 
 function jpHeader($args = null)
 {
-  // --Can choose from text colors darkPrimary, darkSecondary, darkDisabled
-  //    lightPrimary, lightSecondary, lightDisabled, or color.
 
-  //if no color prop is given, then we default to color
+  /*
+   * Defining Default Variables
+   ** e.g. (color, logosize, linkColor)
+   */
+
+  // Logo Color
   if (!$args['color']) {
     $args['color'] = 'color';
   }
-  // if no logosize is given, we default to 150
+  // Body Color
+  if (!$args['bodyColor']) {
+    $args['bodyColor'] = '';
+  }
+  // Logo Size
   if (!$args['logoSize']) {
     $args['logoSize'] = '150';
   }
-  // if no linkColor is given, we default to the logoColor
+  // Link Color
   if (!$args['linkColor']) {
     if ($args['color'] == 'color') {
       $args['linkColor'] = 'darkSecondary';
@@ -21,6 +28,11 @@ function jpHeader($args = null)
       $args['linkColor'] = $args['color'];
     }
   }
+
+
+  /*
+   * Now we output our HTML
+   */
   ?>
   <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,19 +43,21 @@ function jpHeader($args = null)
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> >
 		<div class="content-wrapper">
 			<div class=content>
 				<header class="container">
-				<?php Logo(array('size' => '150', 'color' => $args['color'])); ?>
+        <a href="<?php echo site_url() ?>">
+         <?php Logo(array('size' => '150', 'color' => $args['color'])); ?>
+        </a>
 				<div class="header-menu">
-					<a href="#">
+					<a href="<?php echo site_url('/sample-page') ?>">
 						<div style="color:<?php convertColor($args['linkColor']); ?>" class="header-menu-primary">Services</div>
 					</a>
 					<a href="#">
 						<div style="color:<?php convertColor($args['linkColor']); ?>" class="header-menu-primary">Company</div>
 					</a>
-					<a href="#">
+					<a href="<?php echo get_post_type_archive_link('blog'); ?>">
 						<div style="color:<?php convertColor($args['linkColor']); ?>" class="header-menu-primary">Blog</div>
 					</a>
 					<a href="#">
